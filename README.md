@@ -121,7 +121,14 @@ You can access the frontend via the path `/`, it has 3 inputs field, as shown be
 ![The Frontend](https://github.com/BR19-gh/FSJS-udacity-project1-ibrahimalkhowaiter/blob/master/images/full/ss1.png)
 
   After entering the required fields, press `Change Now!` to see the result.
-  
+  The fronend is the `index.html` in `server/dist/views` folder, the following is what used to build the frontend:
+
+- HTML
+- CSS
+- JavaScript
+- Bootstrap 
+
+<hr>
 
 ### Backend
 
@@ -136,7 +143,7 @@ You can access the frontend via the path `/`, it has 3 inputs field, as shown be
 -  [Sharp package](https://www.npmjs.com/package/sharp)
 
   
-  
+  <hr>
 
 ### Other tools used
 
