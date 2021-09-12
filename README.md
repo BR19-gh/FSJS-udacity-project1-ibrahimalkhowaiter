@@ -67,7 +67,7 @@ npm run build
 
 ```
 The backend code is located in `server/src` folder, and the transformed output is located in `server/dist` folder, except for testing files which are located in `spec/suppor/tests` folder.
--	PS: both ``start`` and ``test`` will ``build`` the app.
+-	PS: both ``start`` and ``test`` will also run ``build``.
 <hr>
 
 ### Linter/prettier
