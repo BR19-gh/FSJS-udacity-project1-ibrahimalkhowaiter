@@ -102,7 +102,7 @@ After installing the dependencies, building and executing the project, the endpo
 
 Consider the app is running at port 3000 on your local environment, you can access the following endpoints
 
-* Main page (discussed below in <a style="text-decoration:none;" href="#frontend">Frontend</a> Section: [http://localhost:3000](http://localhost:3000)
+* Main page (discussed below in <a style="text-decoration:none;" href="#frontend">Frontend</a> Section): [http://localhost:3000](http://localhost:3000)
 
 * Getting the same image with custom dimensions: [http://localhost:3000/api/image?imageId=image.jpg&width=100&height=100](http://localhost:3000/api/image?imageId=image.jpg&width=100&height=100)
   
