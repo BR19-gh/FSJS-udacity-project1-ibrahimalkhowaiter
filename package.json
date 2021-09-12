@@ -17,7 +17,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url/////////////////////////////////": "git+https://github.com/jungleBadger/udacity-image-processing-api.git"
+		"url": "git+https://github.com/BR19-gh/FSJS-udacity-project1-ibrahimalkhowaiter.git"
 	},
 	"author": "Ibrahim Alkhowaiter",
 	"license": "ISC",
