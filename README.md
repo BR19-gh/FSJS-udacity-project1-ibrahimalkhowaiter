@@ -118,7 +118,7 @@ Consider the app is running at port 3000 on your local environment, you can acce
 You can access the frontend via the path `/`, it has 3 inputs field, as shown below:
   
 
-![The Frontend](https://mqomow.am.files.1drv.com/y4pANo2rcm_y7tjnWr4skkCPVddepkxYY64lNC1v0EpKZbT3LsZ0SWxgvzdEqOSbvXsX7CB59Uz5-bKD49dIokIHegR5yKSBey3dNW1KoCOHBgOFh08-R6gNdWGsaQ1gon9HIkrzaU3YGsch4ylVkFX1zMmsBctEQU3sgH53eW8HxBCfNQLwDya10rsSLOUwgmM_i8JhYPtQTJ-lIzNwHWDbw/ss1.png?psid=1)
+![The Frontend](https://mqomow.am.files.1drv.com/y4pHGWNcQcxCTKL7tlyRBEEH368Nsquf9BTTGJI7e--LEUprRdM5-iDo-Ke_HCSQOCY4UE6-up3p3WcDqckhXacBEy4IpRYarI1Er2pYVf9GH903CG6l9zeCpb4C8IGHQ4MW9BIGVMlN0VayYtEx3R1P1ezo0evUf3CdQWnSCZPm6sFOtBHS4Ej69z0yDTBGTrdod4rlHO3Nurl-uj56IlI5Q/ss1.png?psid=1)
 
   After entering the required fields, press `Change Now!` to see the result.
   
