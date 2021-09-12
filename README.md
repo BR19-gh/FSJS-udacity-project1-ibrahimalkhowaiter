@@ -159,4 +159,5 @@ You can access the frontend via the path `/`, it has 3 inputs field, as shown be
 ## Conclusion
 Thank you for reading this, hope it helps you a bit to handle your way on this app.
 > Project done by **Ibrahim Alkhowaiter**
+> <br>
 > It was part of Udacity FSJS nano-degree program
