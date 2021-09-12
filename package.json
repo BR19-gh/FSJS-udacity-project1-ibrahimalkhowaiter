@@ -22,7 +22,7 @@
 	"author": "Ibrahim Alkhowaiter",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/jungleBadger/udacity-image-processing-api/issues"
+		"url": "https://github.com/BR19-gh/FSJS-udacity-project1-ibrahimalkhowaiter/issues"
 	},
 	"dependencies": {
 		"@types/jasmine": "^3.9.0",
