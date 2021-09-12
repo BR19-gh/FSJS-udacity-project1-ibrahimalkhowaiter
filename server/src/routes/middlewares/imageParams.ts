@@ -24,7 +24,7 @@ export default {
 		if (req.query.height && Number(req.query.height) <= 0) {
 			return res.status(400).send(`Invalid "height" value: ${req.query.height}`);
 		} else {
-			height = Number(req.query.width) as Number;
+			height = Number(req.query.height) as Number;
 		}
 
 		res.locals.imageId = imageId;
