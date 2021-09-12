@@ -66,7 +66,7 @@ The testing done by Jasmine. There are two suites in this test, every suites has
 npm run build
 
 ```
-The backend code is located in `server/src` folder, and the transformed output is located in `server/dist` folder, except for testing files which are located in `spec` folder.
+The backend code is located in `server/src` folder, and the transformed output is located in `server/dist` folder, except for testing files which are located in `spec/suppor/tests` folder.
 -	PS: both ``start`` and ``test`` will ``build`` the app.
 <hr>
 
@@ -129,7 +129,7 @@ You can access the frontend via the path `/`, it has 3 inputs field, as shown be
 
 -  [Node.js](https://nodejs.org/)
 
-- [Express.js](https://www.npmjs.com/package/express)
+-  [Express.js](https://www.npmjs.com/package/express)
 
 -  [Typescript](https://www.typescriptlang.org/)
 
