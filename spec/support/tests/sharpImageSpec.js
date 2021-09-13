@@ -38,6 +38,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 var sharpImage_1 = require("../../../server/dist/helpers/sharpImage");
 var fs = require("fs");
+var index_1 = require("../../../server/dist/index");
+var supertest = require('supertest');
+var request = supertest(index_1["default"]);
 var VALID_FILES = ["fjord.jpg", "palmtunnel.jpg"];
 var INVALID_FILES = ["test.jpg", "xxx.jpg"];
 var CUSTOM_HEIGHT = 90;
@@ -170,6 +173,36 @@ describe("Image Processing Test", function () {
                     expect(error.message).toEqual("Image test.jpg not found.");
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
+            }
+        });
+    }); });
+});
+describe("Endpoint Test", function () {
+    var _this = this;
+    it('Get "/test" endpoint with status=200 and body.message="pass test!"', function (doneFn) { return __awaiter(_this, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get('/test')];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(200);
+                    expect(response.body.message).toBe('pass test!');
+                    doneFn();
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    it('Get "/api/image" endpoint using params of ?imageId=image.jpg & width=200 & height=200 with status=200"', function (doneFn) { return __awaiter(_this, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get('/api/image?imageId=image.jpg&width=200&height=200')];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(200);
+                    doneFn();
+                    return [2 /*return*/];
             }
         });
     }); });

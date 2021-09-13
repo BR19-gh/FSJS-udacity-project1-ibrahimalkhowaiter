@@ -38,6 +38,7 @@ NODE_ENV = development
 APP_PORT = 3000
 LOCAL_HTTPS = false
 DEBUG = app:* 
+NODE_TLS_REJECT_UNAUTHORIZED='0'
 ```
 ### To **start** the app, type:
 

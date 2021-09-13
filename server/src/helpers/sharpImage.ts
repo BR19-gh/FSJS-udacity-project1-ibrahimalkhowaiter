@@ -127,6 +127,7 @@ export default {
 			}));
 		}
 
+
 		this.imageId = imageId;
 		this.width = width || 0;
 		this.height = height || 0;
@@ -140,6 +141,7 @@ export default {
 			let originalImageExists = await this.checkIfOriginalImageExists();
 
 			if (!originalImageExists) {
+
 				//2.2 If the original image doesn't exist an error is emitted
 				throw new Error(JSON.stringify({
 					"status": 404,
@@ -148,13 +150,13 @@ export default {
 			}
 
 
+
 		} else {
 
 			//3.1 Check if the transformed image exists
 			let transformedImageExists = await this.checkIfTransformedImageExists();
 
 			if (!transformedImageExists) {
-
 				//3.2 If the processed image doesn't exist we need to check if the original is available.
 				let originalImageExists = await this.checkIfOriginalImageExists();
 
@@ -182,6 +184,7 @@ export default {
 					//3.7 Close file data to clean up the memory
 					await fileData.close();
 				} else {
+					
 					//3.8 If the original image doesn't exist an error is emitted
 					throw new Error(JSON.stringify({
 						"status": 404,

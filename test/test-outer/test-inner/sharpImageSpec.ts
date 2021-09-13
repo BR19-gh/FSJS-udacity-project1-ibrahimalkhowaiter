@@ -1,5 +1,9 @@
 import sharpImage from "../../../server/dist/helpers/sharpImage";
 import * as fs from "fs";
+import * as express from "express"
+import server_ from "../../../server/dist/index"
+const supertest = require('supertest')
+const request = supertest(server_)
 
 const VALID_FILES = ["fjord.jpg", "palmtunnel.jpg"];
 const INVALID_FILES = ["test.jpg", "xxx.jpg"];
@@ -109,4 +113,27 @@ it("Throw an error if the original image doesn't exist", async () => {
 		expect(error.message).toEqual("Image test.jpg not found.");
 	}
 });
+});
+
+
+
+describe("Endpoint Test", function(){
+	it('Get "/test" endpoint with status=200 and body.message="pass test!"', async (doneFn) => {
+
+		const response = await request.get('/test')
+	  
+		expect(response.status).toBe(200)
+		expect(response.body.message).toBe('pass test!')
+		doneFn()
+		
+	  });
+	  it('Get "/api/image" endpoint using params of ?imageId=image.jpg & width=200 & height=200 with status=200"', async (doneFn) => {
+
+		const response = await request.get('/api/image?imageId=image.jpg&width=200&height=200')
+		expect(response.status).toBe(200)
+		doneFn()
+		
+	  })
+
+	  
 });

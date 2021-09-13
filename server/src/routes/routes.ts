@@ -1,21 +1,24 @@
 import * as swaggerJSDoc from "swagger-jsdoc";
 import * as JSDocOptions from "../../../root/swaggerJSDocs";
-import * as url from "url";
-
+import * as express from "express"
 import imagesHandler from "./partials/imagesHandler";
 
 
-export default function (app) {
+export default function (app: express.Application) {
 
 	app.use("/api/image", imagesHandler);
 	app.set('view engine', 'ejs');
 
-	app.get("/api-docs.json", function(req, res) {
+	app.get("/api-docs.json", function(req: express.Request, res: express.Response) {
 		res.setHeader("Content-Type", "application/json");
 		res.send(swaggerJSDoc(JSDocOptions));
 	});
 
-	app.use((err, req, res, next) => {
+	app.get('/test', async (req: express.Request, res: express.Response) => {
+		res.json({message: 'pass test!'})
+	  })
+
+	app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
 		try {
 			if (Object.prototype.hasOwnProperty.call(err, "status")) {
 				return res.status(err.status || 500).send(err.message || err);

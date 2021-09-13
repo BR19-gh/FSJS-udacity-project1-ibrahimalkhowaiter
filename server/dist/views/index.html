@@ -67,6 +67,12 @@
               transform: translateY(50%);
               border:#313131 solid 1px;
               border-radius: 50px;
+              transition: ease-in-out 200ms;
+            }
+            #form:hover{
+              transform: scale(1.02,1.02);
+              box-shadow: 0 0 30px rgb(255 255 255 / 25%);
+              transform: translateY(50%);
             }
             input[type="text"]{
                 background-color:#313131;
@@ -76,17 +82,28 @@
                 background-color:#474747;
                 color: white;
                 width:77px;
+                transition: ease-in-out 210ms;
             }
             input[type="text"]:focus{
                 background-color:#707070;
                 color: white;
+                box-shadow: 0 0 30px rgb(255 255 255 / 25%);
+            }
+            input:hover, input:hover ~ #inputGroupPrepend{
+              box-shadow: 0 0 30px rgb(255 255 255 / 25%);
+            }
+          #inputGroupPrepend:hover,#inputGroupPrepend:hover ~ input{
+              box-shadow: 0 0 30px rgb(255 255 255 / 25%);
             }
           .col-md-4{
               width: 90%;
               justify-content: center;
           }
-          .has-validation{
-              height: 20px;
+          .has-validation, .invalid-feedback{
+              height: 25px;
+          }
+          button:hover{
+            box-shadow: 0 0 30px rgb(255 255 255 / 10%);
           }
           </style>
     

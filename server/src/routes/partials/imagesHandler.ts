@@ -1,6 +1,7 @@
 import {Router} from "express";
 import sharpImageTs from "../../helpers/sharpImage";
 import validators from "../middlewares/imageParams"
+import * as express from "express";
 const router = Router();
 
 /**
@@ -42,7 +43,7 @@ const router = Router();
  */
 router.get("/",
 	validators.validateImageParams,
-	async (req, res) => {
+	async (req: express.Request, res: express.Response) => {
 		try {
 			const image = await sharpImageTs.init(res.locals.imageId, res.locals.width, res.locals.height);
 			res.type("jpg").status(200);
