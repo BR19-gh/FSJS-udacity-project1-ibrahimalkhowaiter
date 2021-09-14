@@ -1,7 +1,7 @@
-import {Router} from "express";
-import sharpImageTs from "../../helpers/sharpImage";
-import validators from "../middlewares/imageParams"
-import * as express from "express";
+import { Router } from 'express';
+import sharpImageTs from '../../helpers/sharpImage';
+import validators from '../middlewares/imageParams';
+import * as express from 'express';
 const router = Router();
 
 /**
@@ -41,17 +41,14 @@ const router = Router();
  *       500:
  *         description: Error handler
  */
-router.get("/",
-	validators.validateImageParams,
-	async (req: express.Request, res: express.Response) => {
-		try {
-			const image = await sharpImageTs.init(res.locals.imageId, res.locals.width, res.locals.height);
-			res.type("jpg").status(200);
-			image.readImageStream().pipe(res);
-		} catch (e) {
-			return res.status(e.status || 500).send(e.message || e || "Unknown error");
-		}
-	}
-);
+router.get('/', validators.validateImageParams, async (req: express.Request, res: express.Response) => {
+    try {
+        const image = await sharpImageTs.init(res.locals.imageId, res.locals.width, res.locals.height);
+        res.type('jpg').status(200);
+        image.readImageStream().pipe(res);
+    } catch (e) {
+        return res.status(e.status || 500).send(e.message || e || 'Unknown error');
+    }
+});
 
 export default router;

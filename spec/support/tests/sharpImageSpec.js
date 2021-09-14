@@ -41,38 +41,38 @@ var fs = require("fs");
 var index_1 = require("../../../server/dist/index");
 var supertest = require('supertest');
 var request = supertest(index_1["default"]);
-var VALID_FILES = ["fjord.jpg", "palmtunnel.jpg"];
-var INVALID_FILES = ["test.jpg", "xxx.jpg"];
+var VALID_FILES = ['fjord.jpg', 'palmtunnel.jpg'];
+var INVALID_FILES = ['test.jpg', 'xxx.jpg'];
 var CUSTOM_HEIGHT = 90;
 var CUSTOM_WIDTH = 100;
 beforeAll(function (done) {
-    fs.rmdir("images/processed/", { "recursive": true }, function (err) {
+    fs.rmdir('images/processed/', { recursive: true }, function (err) {
         done();
     });
 });
 afterAll(function (done) {
-    fs.rmdir("images/processed/", { "recursive": true }, function (err) {
+    fs.rmdir('images/processed/', { recursive: true }, function (err) {
         done();
     });
 });
-describe("Helper Package Test", function () {
+describe('Helper Package Test', function () {
     it("Helper package's attributes should be available", function () {
-        expect(sharpImage_1["default"].hasOwnProperty("imageId")).toBeTruthy();
-        expect(sharpImage_1["default"].hasOwnProperty("height")).toBeTruthy();
-        expect(sharpImage_1["default"].hasOwnProperty("isOriginal")).toBeTruthy();
+        expect(sharpImage_1["default"].hasOwnProperty('imageId')).toBeTruthy();
+        expect(sharpImage_1["default"].hasOwnProperty('height')).toBeTruthy();
+        expect(sharpImage_1["default"].hasOwnProperty('isOriginal')).toBeTruthy();
     });
     it("Helper package's methods should be available", function () {
-        expect(typeof sharpImage_1["default"].init).toEqual("function");
-        expect(typeof sharpImage_1["default"].getStockImagePath).toEqual("function");
-        expect(typeof sharpImage_1["default"].getImagePath).toEqual("function");
-        expect(typeof sharpImage_1["default"].readImageStream).toEqual("function");
-        expect(typeof sharpImage_1["default"].checkIfOriginalImageExists).toEqual("function");
-        expect(typeof sharpImage_1["default"].checkIfTransformedImageExists).toEqual("function");
+        expect(typeof sharpImage_1["default"].init).toEqual('function');
+        expect(typeof sharpImage_1["default"].getStockImagePath).toEqual('function');
+        expect(typeof sharpImage_1["default"].getImagePath).toEqual('function');
+        expect(typeof sharpImage_1["default"].readImageStream).toEqual('function');
+        expect(typeof sharpImage_1["default"].checkIfOriginalImageExists).toEqual('function');
+        expect(typeof sharpImage_1["default"].checkIfTransformedImageExists).toEqual('function');
     });
 });
-describe("Image Processing Test", function () {
+describe('Image Processing Test', function () {
     var _this = this;
-    it("Creating a new image using original properties", function () { return __awaiter(_this, void 0, void 0, function () {
+    it('Creating a new image using original properties', function () { return __awaiter(_this, void 0, void 0, function () {
         var sharpImageObject;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -86,7 +86,7 @@ describe("Image Processing Test", function () {
             }
         });
     }); });
-    it("Creating a new image using custom properties", function () { return __awaiter(_this, void 0, void 0, function () {
+    it('Creating a new image using custom properties', function () { return __awaiter(_this, void 0, void 0, function () {
         var sharpImageObject;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -105,11 +105,11 @@ describe("Image Processing Test", function () {
             }
         });
     }); });
-    it("Default the image to the original one if sizing properties are invalid", function () { return __awaiter(_this, void 0, void 0, function () {
+    it('Default the image to the original one if sizing properties are invalid', function () { return __awaiter(_this, void 0, void 0, function () {
         var sharpImageObject;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, sharpImage_1["default"].init(VALID_FILES[1], null, "")];
+                case 0: return [4 /*yield*/, sharpImage_1["default"].init(VALID_FILES[1], null, '')];
                 case 1:
                     sharpImageObject = _a.sent();
                     expect(sharpImageObject.imageId).toEqual(VALID_FILES[1]);
@@ -120,7 +120,7 @@ describe("Image Processing Test", function () {
             }
         });
     }); });
-    it("Return the original/stock image path through the specialized method", function () { return __awaiter(_this, void 0, void 0, function () {
+    it('Return the original/stock image path through the specialized method', function () { return __awaiter(_this, void 0, void 0, function () {
         var sharpImageObject;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -132,7 +132,7 @@ describe("Image Processing Test", function () {
             }
         });
     }); });
-    it("Return the processed image path through the specialized method", function () { return __awaiter(_this, void 0, void 0, function () {
+    it('Return the processed image path through the specialized method', function () { return __awaiter(_this, void 0, void 0, function () {
         var sharpImageObject;
         return __generator(this, function (_a) {
             switch (_a.label) {
@@ -144,11 +144,14 @@ describe("Image Processing Test", function () {
             }
         });
     }); });
-    it("Offers the image as stream", function (done) {
+    it('Offers the image as stream', function (done) {
         sharpImage_1["default"].init(VALID_FILES[0]).then(function (sharpImageObject) {
-            sharpImageObject.readImageStream().on("data", function () {
+            sharpImageObject
+                .readImageStream()
+                .on('data', function () {
                 return false;
-            }).on("end", function () {
+            })
+                .on('end', function () {
                 done();
             });
         });
@@ -170,14 +173,14 @@ describe("Image Processing Test", function () {
                     e_1 = _a.sent();
                     error = JSON.parse(e_1.message);
                     expect(error.status).toEqual(404);
-                    expect(error.message).toEqual("Image test.jpg not found.");
+                    expect(error.message).toEqual('Image test.jpg not found.');
                     return [3 /*break*/, 4];
                 case 4: return [2 /*return*/];
             }
         });
     }); });
 });
-describe("Endpoint Test", function () {
+describe('Endpoint Test', function () {
     var _this = this;
     it('Get "/test" endpoint with status=200 and body.message="pass test!"', function (doneFn) { return __awaiter(_this, void 0, void 0, function () {
         var response;

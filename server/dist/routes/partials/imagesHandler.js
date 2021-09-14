@@ -77,7 +77,7 @@ var router = express_1.Router();
  *       500:
  *         description: Error handler
  */
-router.get("/", imageParams_1["default"].validateImageParams, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+router.get('/', imageParams_1["default"].validateImageParams, function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var image, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -86,12 +86,12 @@ router.get("/", imageParams_1["default"].validateImageParams, function (req, res
                 return [4 /*yield*/, sharpImage_1["default"].init(res.locals.imageId, res.locals.width, res.locals.height)];
             case 1:
                 image = _a.sent();
-                res.type("jpg").status(200);
+                res.type('jpg').status(200);
                 image.readImageStream().pipe(res);
                 return [3 /*break*/, 3];
             case 2:
                 e_1 = _a.sent();
-                return [2 /*return*/, res.status(e_1.status || 500).send(e_1.message || e_1 || "Unknown error")];
+                return [2 /*return*/, res.status(e_1.status || 500).send(e_1.message || e_1 || 'Unknown error')];
             case 3: return [2 /*return*/];
         }
     });

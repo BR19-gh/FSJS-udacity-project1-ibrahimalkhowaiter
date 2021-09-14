@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,25 +39,25 @@ exports.__esModule = true;
 var fs = require("fs");
 var fsAsync = require("fs/promises");
 var sharp = require("sharp");
-var FULL_IMAGES_PATH = "./images/full";
-var PROCESSED_IMAGES_PATH = "./images/processed";
+var FULL_IMAGES_PATH = './images/full';
+var PROCESSED_IMAGES_PATH = './images/processed';
 exports["default"] = {
     /**
      *  @type {string}
      */
-    "imageId": "",
+    imageId: '',
     /**
      *  @type {number}
      */
-    "width": 0,
+    width: 0,
     /**
      *  @type {number}
      */
-    "height": 0,
+    height: 0,
     /**
      *  @type {boolean}
      */
-    "isOriginal": true,
+    isOriginal: true,
     /**
      * Calculates the stock image path based on a constant and image ID.
      *
@@ -74,9 +74,9 @@ exports["default"] = {
      * @return {string} - The processed image path.
      */
     getImagePath: function () {
-        return (this.isOriginal ?
-            this.getStockImagePath() :
-            PROCESSED_IMAGES_PATH + "/" + this.width + "x" + this.height + "/" + this.imageId);
+        return this.isOriginal
+            ? this.getStockImagePath()
+            : PROCESSED_IMAGES_PATH + "/" + this.width + "x" + this.height + "/" + this.imageId;
     },
     /**
      * .
@@ -91,8 +91,8 @@ exports["default"] = {
         }
         catch (e) {
             throw new Error(JSON.stringify({
-                "status": 404,
-                "message": "Image not found."
+                status: 404,
+                message: 'Image not found.'
             }));
         }
     },
@@ -103,7 +103,7 @@ exports["default"] = {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        return [4 /*yield*/, fsAsync.open(this.getStockImagePath(), "r")];
+                        return [4 /*yield*/, fsAsync.open(this.getStockImagePath(), 'r')];
                     case 1:
                         fileData = _a.sent();
                         return [4 /*yield*/, fileData.close()];
@@ -125,7 +125,7 @@ exports["default"] = {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 3, , 4]);
-                        return [4 /*yield*/, fsAsync.open(this.getImagePath(), "r")];
+                        return [4 /*yield*/, fsAsync.open(this.getImagePath(), 'r')];
                     case 1:
                         fileData = _a.sent();
                         return [4 /*yield*/, fileData.close()];
@@ -155,7 +155,7 @@ exports["default"] = {
      * @throws It will throw a `500 - Internal server` error if some processing issue happens.
      * @return {SharpImage} - The constructed file representation.
      */
-    "init": function Constructor(imageId, width, height) {
+    init: function Constructor(imageId, width, height) {
         if (width === void 0) { width = 0; }
         if (height === void 0) { height = 0; }
         return __awaiter(this, void 0, void 0, function () {
@@ -165,8 +165,8 @@ exports["default"] = {
                     case 0:
                         if (!imageId) {
                             throw new Error(JSON.stringify({
-                                "status": 400,
-                                "message": "Invalid image parameters."
+                                status: 400,
+                                message: 'Invalid image parameters.'
                             }));
                         }
                         this.imageId = imageId;
@@ -180,8 +180,8 @@ exports["default"] = {
                         if (!originalImageExists) {
                             //2.2 If the original image doesn't exist an error is emitted
                             throw new Error(JSON.stringify({
-                                "status": 404,
-                                "message": "Image " + this.imageId + " not found."
+                                status: 404,
+                                message: "Image " + this.imageId + " not found."
                             }));
                         }
                         return [3 /*break*/, 11];
@@ -195,12 +195,12 @@ exports["default"] = {
                         if (!originalImageExists) return [3 /*break*/, 10];
                         //3.3 If the original image exists we can create the processed one from it.
                         //3.4 Create the processed folder based on width x height. e.g:, `images/processed/100x100/`
-                        return [4 /*yield*/, fsAsync.mkdir(PROCESSED_IMAGES_PATH + "/" + this.width + "x" + this.height, { "recursive": true })];
+                        return [4 /*yield*/, fsAsync.mkdir(PROCESSED_IMAGES_PATH + "/" + this.width + "x" + this.height, { recursive: true })];
                     case 5:
                         //3.3 If the original image exists we can create the processed one from it.
                         //3.4 Create the processed folder based on width x height. e.g:, `images/processed/100x100/`
                         _c.sent();
-                        return [4 /*yield*/, fsAsync.open(this.getImagePath(), "w")];
+                        return [4 /*yield*/, fsAsync.open(this.getImagePath(), 'w')];
                     case 6:
                         fileData = _c.sent();
                         _b = (_a = fileData).write;
@@ -220,8 +220,8 @@ exports["default"] = {
                     case 10: 
                     //3.8 If the original image doesn't exist an error is emitted
                     throw new Error(JSON.stringify({
-                        "status": 404,
-                        "message": "Image " + this.imageId + " not found."
+                        status: 404,
+                        message: "Image " + this.imageId + " not found."
                     }));
                     case 11: return [2 /*return*/, this];
                 }
