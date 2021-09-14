@@ -77,6 +77,8 @@ The backend code is located in `server/src` folder, and the transformed output i
 
 Code styling check and automatic fix is handled by ESLint through a Gulp task. You can execute the command below:
 
+PS: You should first change the names of configuration files (eslintrc.js & prettierrc.js) to (.eslintrc.js & .prettierrc.js), a.i. add dot in the beginning.
+
 ```bash
 
 npm run lint
