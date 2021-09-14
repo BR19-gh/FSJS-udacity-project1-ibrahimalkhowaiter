@@ -154,7 +154,7 @@ You can access the frontend via the path `/`, it has 3 inputs field, as shown be
 
 -  [Gulp.js](https://gulpjs.com/)
 
--  [supertest](https://www.npmjs.com/package/supertest)
+-  [Supertest](https://www.npmjs.com/package/supertest)
 
 -  [ESLint](https://eslint.org/)
 
